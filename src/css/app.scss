@@ -1,0 +1,41 @@
+// app global css in SCSS form
+//@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap');
+
+body {
+  font-family: 'Noto Sans SC', "-apple-system", Helvetica, Tahoma, Arial, sans-serif;
+}
+
+.bg-apple-dark {
+  background: $appleDark
+}
+
+.bg-apple-grey {
+  background: $appleGrey
+}
+
+.apple-blue {
+  color: $applePrimary;
+}
+
+.dropbox-grey {
+  color: #F2F2F2;
+}
+
+.bg-dropbox-grey {
+  background: #F2F2F2;
+}
+
+.apple-card, .apple-card-hover {
+  border-radius: 8px;
+  background: #FFF !important;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, .08);
+  transition: all .3s cubic-bezier(0, 0, .5, 1);
+
+}
+
+
+.apple-card-hover:hover {
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, .16);
+  transform: scale3d(1.01, 1.01, 1.01)
+
+}
