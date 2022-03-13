@@ -1,5 +1,4 @@
 <template>
-
   <div class=" column q-gutter-md">
     <div v-for="item in ui.osVersionList " :key="item">
       <div class="flex q-pt-md q-pl-md q-gutter-md items-center">

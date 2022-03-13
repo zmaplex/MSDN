@@ -1,13 +1,13 @@
 <template>
   <div class=" ">
     <q-list bordered class="shadow-0 no-border q-pa-md q-gutter-md  ">
-      <div v-for="item in Object.keys(osDetailData)" :key="item">
+      <div v-for="item in Object.keys(osDetailData)" :key="item" style="max-width: 90vw !important;">
         <q-expansion-item
           :caption="osDetailData[item].Meta.size"
-          :header-style="{'min-height':'80px'}"
-
+          :header-style="{'min-height':'80px','max-width':'100%'}"
           :label="item"
-          class="bg-white text-dark "
+
+          class="bg-white text-dark  wrap"
           expand-separator
         >
           <q-card class="apple-card ">
@@ -50,18 +50,18 @@
               </div>
               <q-separator class="q-mt-sm bg-red"></q-separator>
               <div class="q-mt-sm flex q-gutter-sm">
-                <q-btn :disable="!osDetailData[item].Direct" :href="osDetailData[item].Direct" color="blue-grey-2"
+                <q-btn v-if="osDetailData[item].Direct" :href="osDetailData[item].Direct" color="blue-grey-2"
                        flat
                        icon="download"
                        label="直连下载" text-color="dark"
                        type="a"></q-btn>
                 <q-btn
-                  :disable="!osDetailData[item].BitTorrent"
+                  v-if="osDetailData[item].BitTorrent"
                   :href="osDetailData[item].BitTorrent"
                   :icon="'img:assets/img/qbittorrent.svg'" color="primary"
                   flat label="种子下载"></q-btn>
                 <q-btn
-                  :disable="!osDetailData[item].ED2K"
+                  v-if="osDetailData[item].ED2K"
                   :href="osDetailData[item].ED2K"
                   color="blue-grey"
                   flat
@@ -120,5 +120,20 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.q-item__section--main {
+  /* width: auto; */
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
+.q-item__section {
+
+}
+
+
+</style>
+<style>
+.q-item__section .q-item__label {
+  overflow: auto !important;
+}
 </style>
