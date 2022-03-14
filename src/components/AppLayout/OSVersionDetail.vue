@@ -3,7 +3,7 @@
     <q-list bordered class="shadow-0 no-border q-pa-md q-gutter-md  ">
       <div v-for="item in Object.keys(osDetailData)" :key="item" style="max-width: 90vw !important;">
         <q-expansion-item
-          :caption="osDetailData[item].Meta.size"
+          :caption="osDetailData[item].Meta.size !== 'unknown'?osDetailData[item].Meta.size:''"
           :header-style="{'min-height':'80px','max-width':'100%'}"
           :label="item"
 
@@ -53,13 +53,15 @@
                 <q-btn v-if="osDetailData[item].Direct" :href="osDetailData[item].Direct" color="blue-grey-2"
                        flat
                        icon="download"
-                       label="直连下载" text-color="dark"
+                       label="直连下载"
+                       target="_blank" text-color="dark"
                        type="a"></q-btn>
                 <q-btn
                   v-if="osDetailData[item].BitTorrent"
                   :href="osDetailData[item].BitTorrent"
-                  :icon="'img:assets/img/qbittorrent.svg'" color="primary"
-                  flat label="种子下载"></q-btn>
+                  :icon="'img:assets/img/qbittorrent.svg'"
+                  color="primary" flat
+                  label="种子下载" target="_blank"></q-btn>
                 <q-btn
                   v-if="osDetailData[item].ED2K"
                   :href="osDetailData[item].ED2K"
@@ -72,7 +74,6 @@
                        :href="osDetailData[item].BoatCloud"
                        color="dark" icon="cloud_download" label="舟云高速"
                        target="_blank"
-
                        text-color="yellow"></q-btn>
                 <q-btn v-for="item in osDetailData[item].Extend" :key="item.name" :href="item.url" :label="item.name"
                        flat
