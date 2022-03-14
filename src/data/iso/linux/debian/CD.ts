@@ -196,25 +196,22 @@ for (const itemKey in MetaList) {
   const distribution = `${item.version} ${item.name}`
   CD[distribution] = []
   for (const architecture of architectureList) {
-    console.log(architecture)
     CD[distribution].push({
       'Meta': {
         'name': `debian-${item.version}-${architecture}-CD-1.iso`,
-        'architecture': 'amd64',
+        'architecture': `${architecture}`,
         'description': item.description,
         'size': item.size ? item.size : 'unknown',
         'at_date': item.at_date ? item.at_date : '2021-10-13 22:19',
         'up_date': item.at_date ? item.at_date : '2021-10-13 22:19',
       },
-      'Direct': `https://cdimage.debian.org/cdimage/archive/${item.version}/amd64/iso-cd/`,
-      'BitTorrent': `https://cdimage.debian.org/cdimage/archive/${item.version}/amd64/bt-cd/`,
+      'Direct': `https://cdimage.debian.org/cdimage/archive/${item.version}/${architecture}/iso-cd/`,
+      'BitTorrent': `https://cdimage.debian.org/cdimage/archive/${item.version}/${architecture}/bt-cd/`,
       'ED2K': '',
       'BoatCloud': '',
       'Extend': []
     },)
   }
-
-
 }
 export default CD
 

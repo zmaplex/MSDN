@@ -5,9 +5,9 @@ const windows: OSVersionIF = {
   'Professional SP3 VOL': [
     {
       'Meta': {
-        'name': 'zh-hans_windows_xp_professional_with_service_pack_3_x86_cd_vl_x14-74070.iso',
+        'name': 'zh-hans_windows_74070.iso',
         'architecture': 'x86',
-        'description': '',
+        'description': 'zh-hans_windows_xp\n_professional_with_service_pack_3_x86_cd_vl_x14-74070.iso',
         'size': '601.04 MiB',
         'at_date': '2021-10-13 22:19',
         'up_date': '2021-10-13 22:19'

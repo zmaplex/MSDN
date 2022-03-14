@@ -1,11 +1,10 @@
 <template>
-  <div class=" column q-gutter-md">
-    <div v-for="item in ui.osVersionList " :key="item">
-      <div class="flex q-pt-md q-pl-md q-gutter-md items-center">
+  <div class="row q-gutter-md q-pa-md">
+    <div v-for="item in ui.osVersionList " :key="item" class="col-md-3 col-sm-12 col-xs-12">
+      <div class="flex q-gutter-sm items-center">
         <q-icon name="remove"></q-icon>
         <div class="text-body1 text-bold  ">{{ ui.distribution.toUpperCase() }} {{ item }}</div>
       </div>
-
       <OSVersionDetail :os_detail_list="osVersionData[item]"></OSVersionDetail>
     </div>
   </div>

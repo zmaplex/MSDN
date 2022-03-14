@@ -1,16 +1,15 @@
 <template>
-  <div class=" ">
-    <q-list bordered class="shadow-0 no-border q-pa-md q-gutter-md  ">
+  <div class="">
+    <q-list bordered class="shadow-0 no-border q-pa-md " style="max-width: 500px">
       <div v-for="item in Object.keys(osDetailData)" :key="item" style="max-width: 90vw !important;">
         <q-expansion-item
           :caption="osDetailData[item].Meta.size !== 'unknown'?osDetailData[item].Meta.size:''"
-          :header-style="{'min-height':'80px','max-width':'100%'}"
+          :header-style="{'min-height':'40px','max-width':'100%'}"
           :label="item"
-
-          class="bg-white text-dark  wrap"
+          class="bg-white text-dark wrap apple-card-hover no-border-radius"
           expand-separator
         >
-          <q-card class="apple-card ">
+          <q-card>
             <q-card-section class="bg-grey-1">
               <div v-if="osDetailData[item].Meta.description" class="q-pa-sm">
                 {{ osDetailData[item].Meta.description }}
@@ -84,7 +83,7 @@
           </q-card>
 
         </q-expansion-item>
-
+        <q-separator></q-separator>
       </div>
     </q-list>
   </div>
@@ -123,8 +122,8 @@ export default defineComponent({
 <style scoped>
 .q-item__section--main {
   /* width: auto; */
-  overflow-x: auto;
-  white-space: nowrap;
+  /*overflow-x: auto;*/
+  /*white-space: nowrap;*/
 }
 
 .q-item__section {
