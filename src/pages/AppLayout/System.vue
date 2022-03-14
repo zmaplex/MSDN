@@ -1,5 +1,5 @@
 <template>
-  <q-page class="bg-grey-2">
+  <q-page class="bg-blue-grey-1">
     <OperatingSystem/>
   </q-page>
 

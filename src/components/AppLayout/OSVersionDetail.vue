@@ -6,11 +6,12 @@
           :caption="osDetailData[item].Meta.size !== 'unknown'?osDetailData[item].Meta.size:''"
           :header-style="{'min-height':'40px','max-width':'100%'}"
           :label="item"
-          class="bg-white text-dark wrap apple-card-hover no-border-radius"
+          class="text-dark wrap bg-apple-grey  apple-card-hover no-border-radius"
+          header-class="q-pa-md"
           expand-separator
         >
-          <q-card>
-            <q-card-section class="bg-grey-1">
+          <q-card class=" bg-apple-grey">
+            <q-card-section>
               <div v-if="osDetailData[item].Meta.description" class="q-pa-sm">
                 {{ osDetailData[item].Meta.description }}
               </div>
@@ -83,7 +84,7 @@
           </q-card>
 
         </q-expansion-item>
-        <q-separator></q-separator>
+        <q-separator color="blue-grey-1"></q-separator>
       </div>
     </q-list>
   </div>
