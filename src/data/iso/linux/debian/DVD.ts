@@ -2,12 +2,11 @@ import {OSVersionIF} from 'src/data/iso';
 import MetaList, {DebianMeta} from 'src/data/iso/linux/debian/meta';
 
 
-const architectureList = ['amd64', 'arm64', 'armel', 'armhf', 'i386', 'mips', 'mips64el', 'mipsel', 'ppc64el', 's390x', 'multi-arch']
+const architectureList = ['amd64', 'arm64', 'armel', 'armhf', 'i386', 'mips', 'mips64el', 'mipsel', 'ppc64el', 's390x',]
 
 
 function getSize(item: DebianMeta, architecture: string): string {
   if (item.archExtendMeta) {
-
     if (item.archExtendMeta.hasOwnProperty(architecture) && architecture !== undefined) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return
       return eval('item.archExtendMeta' + `.
@@ -21,22 +20,7 @@ function getSize(item: DebianMeta, architecture: string): string {
 }
 
 function getFileName(item: DebianMeta, architecture: string): string {
-  let filename = `debian-${item.version}-${architecture}-CD-1.iso`
-
-
-  if (item.isoSuffix) {
-    filename = `debian-${item.version}-${architecture}-${item.isoSuffix}.iso`
-  } else if (item.archExtendMeta) {
-    if (item.archExtendMeta.hasOwnProperty(architecture) && architecture !== undefined) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-assignment
-      const isoSuffix = eval('item.archExtendMeta' + `.
-      ${architecture}`).isoSuffix
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      filename = `debian-${item.version}-${architecture}-${isoSuffix}.iso`
-    } else {
-      filename = `debian-${item.version}-${architecture}-CD-1.iso`
-    }
-  }
+  let filename = `debian-${item.version}-${architecture}-DVD-1.iso`
 
   if (architecture === 'multi-arch') {
     filename = `debian-${item.version}-amd64-i386-netinst.iso`
@@ -72,7 +56,7 @@ function getOSVersion(obj: OSVersionIF, imgageType: string) {
   }
 }
 
-const CD: OSVersionIF = {}
-getOSVersion(CD, 'cd')
-export default CD
+const DVD: OSVersionIF = {}
+getOSVersion(DVD, 'dvd')
+export default DVD
 
