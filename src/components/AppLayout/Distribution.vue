@@ -16,7 +16,7 @@
               }})"
       >
         <div class="flex q-gutter-md items-center">
-          <q-icon :name="`img:assets/img/${ui.operatingSystem}.svg`" loading="lazy" no-spinner size="36px"></q-icon>
+          <q-icon :name='getSystemIcon(item,ui.operatingSystem)' loading="lazy" no-spinner size="36px"></q-icon>
           <div class="title">{{ item }}</div>
         </div>
       </div>
@@ -57,12 +57,42 @@ export default defineComponent({
 
     }
 
+    function getSystemIcon(distribution: string, operatingSystem: string) {
+      let iconList = ['debian', 'ubuntu', 'windows', 'linux']
+      let name = null
+
+      for (let item of iconList) {
+        if (distribution.toLowerCase().includes(item)) {
+          name = item
+          break
+        }
+      }
+
+      if (name != null) {
+        return `img:assets/img/${name}.svg`
+      }
+
+      for (let item of iconList) {
+        if (operatingSystem.toLowerCase().includes(item)) {
+          name = item
+          break
+        }
+      }
+      if (name != null) {
+        return `img:assets/img/${name}.svg`
+      } else {
+        return 'img:assets/img/linux.svg'
+      }
+
+
+    }
+
     function clickTo(data: RouteLocationRaw) {
       void router.push(data)
     }
 
     return {
-      ui, clickTo
+      ui, clickTo, getSystemIcon
     }
   }
 })
