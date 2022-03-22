@@ -2,7 +2,7 @@ import {OSVersionIF} from 'src/data/iso';
 
 
 const windows11: OSVersionIF = {
-  'Windows 11 business': [
+  'Business': [
     {
       'Meta': {
         'name': 'Windows 11 (business editions), (updated March 2022) (x64) - DVD (Chinese-Simplified)',
@@ -21,7 +21,7 @@ const windows11: OSVersionIF = {
 
   ],
 
-  'Windows 11 consumer': [
+  'Consumer': [
     {
       'Meta': {
         'name': 'Windows 11 (consumer editions), (updated March 2022) (x64) - DVD (Chinese-Simplified)',
