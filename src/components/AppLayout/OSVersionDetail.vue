@@ -12,7 +12,7 @@
         >
           <q-card class=" bg-apple-grey">
             <q-card-section>
-              <div v-if="osDetailData[item].Meta.description" class="q-pa-sm">
+              <div v-if="osDetailData[item].Meta.description" class="q-pa-sm" style="overflow: auto">
                 {{ osDetailData[item].Meta.description }}
               </div>
               <div class="flex q-gutter-sm q-mt-sm">
